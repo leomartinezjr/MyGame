@@ -25,7 +25,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="382.66666666666669" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r3q-gY-3Gz">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r3q-gY-3Gz">
                                             <rect key="frame" x="28" y="17" width="51" height="66"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="51" id="Rm1-d1-dM6"/>
@@ -64,7 +64,7 @@
                                     <outlet property="ivCover" destination="r3q-gY-3Gz" id="GwK-Nq-fo4"/>
                                     <outlet property="lbConsole" destination="tOd-Fg-qvJ" id="u1B-n4-hFq"/>
                                     <outlet property="lbTitile" destination="bty-yY-UWr" id="h6N-ZW-fF2"/>
-                                    <segue destination="n3z-ee-TOs" kind="show" id="oRb-uw-cwc"/>
+                                    <segue destination="n3z-ee-TOs" kind="show" identifier="gameSegue" id="oRb-uw-cwc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -76,7 +76,7 @@
                     <navigationItem key="navigationItem" title="Lista de Jogos" id="9JM-Wq-oYg">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Me9-vR-w5M">
                             <connections>
-                                <segue destination="dmw-hc-Ihw" kind="show" id="4rh-vN-0LU"/>
+                                <segue destination="dmw-hc-Ihw" kind="show" identifier="newGame" id="4rh-vN-0LU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -111,7 +111,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="UoR-P1-GaV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="747" translatesAutoresizingMaskIntoConstraints="NO" id="UoR-P1-GaV">
                                 <rect key="frame" x="16" y="154" width="382" height="513"/>
                             </imageView>
                         </subviews>
@@ -123,7 +123,7 @@
                             <constraint firstItem="tWQ-WE-yAD" firstAttribute="trailing" secondItem="VyX-Ou-sbH" secondAttribute="trailing" constant="16" id="B5M-kz-7Kt"/>
                             <constraint firstItem="VyX-Ou-sbH" firstAttribute="top" secondItem="3CY-74-N6d" secondAttribute="bottom" constant="8" id="D0r-Fr-cui"/>
                             <constraint firstItem="dVD-tX-EHD" firstAttribute="top" secondItem="VyX-Ou-sbH" secondAttribute="bottom" constant="8" id="D9q-PU-3Os"/>
-                            <constraint firstItem="UoR-P1-GaV" firstAttribute="top" secondItem="dVD-tX-EHD" secondAttribute="bottom" constant="16" id="KIa-Ry-424"/>
+                            <constraint firstItem="UoR-P1-GaV" firstAttribute="top" secondItem="dVD-tX-EHD" secondAttribute="bottom" priority="999" constant="16" id="KIa-Ry-424"/>
                             <constraint firstItem="3CY-74-N6d" firstAttribute="leading" secondItem="tWQ-WE-yAD" secondAttribute="leading" constant="16" id="QdP-3t-Qey"/>
                             <constraint firstItem="tWQ-WE-yAD" firstAttribute="trailing" secondItem="dVD-tX-EHD" secondAttribute="trailing" constant="16" id="QjK-UB-sSw"/>
                             <constraint firstItem="dVD-tX-EHD" firstAttribute="leading" secondItem="tWQ-WE-yAD" secondAttribute="leading" constant="16" id="TQ0-eu-G6D"/>
@@ -149,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6x9-9Y-Qos" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="854"/>
+            <point key="canvasLocation" x="953.62318840579712" y="896.73913043478262"/>
         </scene>
         <!--Adicionar Novo Jogo-->
         <scene sceneID="RaE-NV-zKE">
@@ -159,7 +159,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nome do Jogo..." borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lii-1e-ZfN">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do jogo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lii-1e-ZfN">
                                 <rect key="frame" x="16" y="60" width="382" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="zh3-JW-j2D"/>
@@ -168,7 +168,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Plataforma..." borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KNd-RL-dfx">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Plataforma" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KNd-RL-dfx">
                                 <rect key="frame" x="16" y="104" width="382" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="aTa-wX-MSJ"/>
@@ -210,7 +210,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="addEditCover:" destination="dmw-hc-Ihw" eventType="touchUpInside" id="xcQ-yX-q6d"/>
+                                    <action selector="addEditgame:" destination="dmw-hc-Ihw" eventType="touchUpInside" id="aeB-DJ-unv"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dwf-2e-6VA">
@@ -219,6 +219,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fM-r6-a3m">
                                 <rect key="frame" x="88.666666666666686" y="450.66666666666669" width="237" height="30"/>
                                 <state key="normal" title="Clique Para Adiconar Uma Imagem"/>
+                                <connections>
+                                    <action selector="addEditCover:" destination="dmw-hc-Ihw" eventType="touchUpInside" id="Cal-ak-cm5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d8f-ES-kds"/>
@@ -262,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U58-ru-sA7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924.6376811594205" y="853.53260869565224"/>
+            <point key="canvasLocation" x="2022" y="912"/>
         </scene>
         <!--Lista de Plataformas-->
         <scene sceneID="s7S-6T-dho">
@@ -369,7 +372,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qNx-jo-SZm"/>
+        <segue reference="4rh-vN-0LU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="console" width="23" height="23"/>

@@ -12,6 +12,6 @@
     </entity>
     <elements>
         <element name="Game" positionX="-339.234375" positionY="-39.55078125" width="128" height="103"/>
-        <element name="Console" positionX="-20.76171875" positionY="-10.0078125" width="128" height="73"/>
+        <element name="Console" positionX="-580.1953125" positionY="-41.9375" width="128" height="73"/>
     </elements>
 </model>

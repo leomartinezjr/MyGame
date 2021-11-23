@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GameViewController: UIViewController {
 
@@ -14,15 +15,43 @@ class GameViewController: UIViewController {
     @IBOutlet weak var lbReleaseDate: UILabel!
     @IBOutlet weak var ivCover: UIImageView!
     
-    var game : Game!
+    var game: Game!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        
+        
+        
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        lbTitle.text = game?.title
+        lbConsole.text = game.console?.name
+        if let releseDate = game.releaseDate{ // UMcmetodo para formatar uma data
+            let formater = DateFormatter()
+                formater.dateStyle = .long
+                formater.locale = Locale(identifier: "pt-Br")
+                lbReleaseDate.text = "Lançamento: " + formater.string(from: releseDate)
+            }
+        if let image = game.cover as? UIImage { // recupera a capa do jogo
+            ivCover.image = image
+        }else{
+            ivCover.image = UIImage(named: "noCoverFull")
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! AddEditViewController
+        vc.game = game
+    }
+    
+
 
     /*
     // MARK: - Navigation
@@ -34,4 +63,10 @@ class GameViewController: UIViewController {
     }
     */
 
+    
 }
+
+
+    
+    
+
